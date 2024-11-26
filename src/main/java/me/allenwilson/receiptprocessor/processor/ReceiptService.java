@@ -20,6 +20,8 @@ class ReceiptService {
     private final ReceiptPointsRepository pointsRepository;
 
     ReceiptResponseDto process(ReceiptRequestDto receiptRequestDto) {
+        log.info("Processing receipt from retailer: {}", receiptRequestDto.retailer());
+
         int receiptPoints = calculatePoints(receiptRequestDto);
 
         PointEntity savedEntity = pointsRepository.save(PointEntity.builder()
