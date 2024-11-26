@@ -60,6 +60,20 @@ docker run -p 8080:8080 receipt-processor
           "total": "35.35"
         }'
     ```
+   Sample log output:
+   ```text
+   [receipt-processor] [nio-8080-exec-1] m.a.r.processor.ReceiptService           : Processing receipt from retailer: Target
+   [receipt-processor] [nio-8080-exec-1] m.a.r.processor.ReceiptService           : Rule RetailerNameRule calculated 6 points
+   [receipt-processor] [nio-8080-exec-1] m.a.r.processor.ReceiptService           : Rule RoundDollarRule calculated 0 points
+   [receipt-processor] [nio-8080-exec-1] m.a.r.processor.ReceiptService           : Rule TotalMultipleRule calculated 0 points
+   [receipt-processor] [nio-8080-exec-1] m.a.r.processor.ReceiptService           : Rule ItemCountRule calculated 10 points
+   [receipt-processor] [nio-8080-exec-1] m.a.r.processor.ReceiptService           : Rule ItemDescriptionRule calculated 6 points
+   [receipt-processor] [nio-8080-exec-1] m.a.r.processor.ReceiptService           : Rule PurchaseDateRule calculated 6 points
+   [receipt-processor] [nio-8080-exec-1] m.a.r.processor.ReceiptService           : Rule PurchaseTimeRule calculated 0 points
+   [receipt-processor] [nio-8080-exec-1] m.a.r.processor.ReceiptService           : Total points calculated: 28
+   [receipt-processor] [nio-8080-exec-1] m.a.r.processor.ReceiptService           : Receipt id e11890cd-307a-41c7-9f76-2930a2a13e84 processed with 28 points
+   ```
+
    
 ## Disclaimer
 Just a limited example of tests are included in this project. In a real-world scenario, a more complete & comprehensive set of unit and integration tests would be included.
